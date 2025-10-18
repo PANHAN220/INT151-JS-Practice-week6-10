@@ -2,7 +2,7 @@
 
 function createMultiplier(multiplier) {
   return function(num) {
-    return num ** multiplier
+    return num ** multiplier                => ฟังก์ชันด้านในจำค่าของตัวแปร multiplier จากข้างนอกไว้ได้
   }
 }
 
@@ -13,8 +13,8 @@ console.log(double(5));
 console.log(triples(5));
 
 // 🚩 2. แปลงข้อความแบบกำหนดเอง
-ออ
-function transformtext(text,operation) {
+
+function transformtext(text,operation) {        => รับฟังก์ชั่น operation มาเป็นพารามิเตอร์
   return operation(text);
 }
 
@@ -23,12 +23,11 @@ function addStar(text) {
 }
 
 function reverse(text) {
-   return text.split("").reverse().join("");
+   return text.split("").reverse().join("");      => ใช้ .split เพื่อแปลงให้เป็น array
 }
 
 console.log(transformtext("SIT", addStar));      
 console.log(transformtext("KMUTT", reverse));
-
 
 // 🚩 3. Compose ฟังก์ชันข้อความ
 
@@ -51,7 +50,7 @@ console.log(welcomeText("sakdichote"));
 
 
 
-// 🚩 4.ให้เขียนฟังก์ชัน addStudent(students, newName) ที่
+// 🚩 4.ให้เขียนฟังก์ชัน addStudent(students, newName) 
 //    รับ array ของชื่อนักเรียน
 //    คืนค่า array ใหม่ที่มีชื่อนักเรียนเพิ่มเข้ามา โดยไม่แก้ของเดิม
 
