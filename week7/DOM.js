@@ -35,9 +35,30 @@ const child = childElement.children //ได้ลูกที่เป็นเ
 childNodes.forEach( child => console.log(child))
 
 // how to get attributes 
-const divElementNode = document.getElementById("soup") // query node นั้นมาก่อนแล้วค่อยเข้าภึง attributes
+const divElement = document.getElementById("menu") // query node นั้นมาก่อนแล้วค่อยเข้าภึง attributes
 const divAttributes = divElementNode.attributes
 console.log(divAttributes.length);
+
+// acess by use value 
+const ulElement = document.getElementById("soup")
+console.log(ulElement.nodeName)
+console.log(ulElement.nodeType)
+console.log(ulElement.nodeValue)
+
+
+
+// 1. what is the node type of first child of root node
+console.log(document.firstChild.nodeType)
+
+// 2. if node types is an element node, display 'Hello HTML node' , ottherwise, display "Hello any node"
+
+if(document.firstElementChild.nodeType===Node.ELEMENT_NODE){
+    console.log('Hello, HTML node');
+    
+}
+else {
+    console.log('hello any node')
+} 
 
 
 

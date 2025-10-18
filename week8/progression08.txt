@@ -1,0 +1,70 @@
+
+// 🚩 1. (insertBefore) <li class = "vegan">Cabbage Soup </li>
+//1.1 get its parent
+const soupUlElement = document.getElementById("soup")   => เลือก <ul> ที่มี id="soup"
+//1.2 get ref node -Beef Soup
+let refNode = null  => ประกาศตัวแปร refNode เพื่อเก็บ “reference node”
+Array.from(soupUlElement.children).forEach((element) => {  
+    if (element.textContent.trim().includes("Beef Soup")) refNode = element
+});      
+         => Array.from() แปลงให้กลายเป็น array เพื่อให้ใช้ .forEach() วนลูปผ่านทุก <li> ภายใน <ul id="soup">
+            เช็กว่าข้อความนั้นมีคำว่า "Beef Soup" หรือไม่ถ้าเจอให้เก็บ element นั้นไว้ใน refNode
+
+
+// 🚩 2. remove Vegetable Soup
+//2.1 get its parent
+const MenuSoupUlElement = document.getElementById("soup")
+//2.2 get ref node -Beef Soup
+let referNode = null
+Array.from(MenuSoupUlElement.children).forEach((element) => {
+  if (element.textContent.trim() === "Vegetable Soup") refNode = element
+})
+//2.3 remove
+soupUlElement.removeChild(refNode)    => ใช้เมธอด .removeChild() ของ parent node (<ul>) เพื่อลบลูก <li> ที่เราหาเจอ
+
+
+
+// 🚩 3.Write JavaScript to find out how many menu items are of class "vegan" and "meat" and display them.
+
+const itemVegan = document.querySelectorAll(".vegan");   => ใช้ querySelectorAll เพื่อเลือกทุก <li> ที่มี class "vegan"
+const itemMeat = document.querySelectorAll(".meat");     => ใช้ querySelectorAll เพื่อเลือกทุก <li> ที่มี class "meat"
+console.log("Vegan", itemVegan.length);
+console.log("Meat", itemMeat.length); => ใช้ .length เพื่อดูจำนวน
+
+
+
+// 🚩 4.Add a new <li> code inside the <ul id="soup"> that says "Tom Yum Soup" and has a class of "spicy".
+
+const soupList = document.getElementById("soup");
+const newItem = document.createElement("li");               => สร้าง <li> ใหม่
+
+newItem.textContent = "Tom yum soup"                           => ใส่ข้อความให้กับ newItem
+newItem.classList.add = "spicy"                               => เพิ่ม class spicy
+soupList.appendChild(newItem)                                => นำไปต่อท้าย <ul id="soup">
+
+
+// 🚩 5. Use JavaScript to select all menu items with the class "meat" and change the text color to red.
+
+const menuMeat = document.querySelectorAll(".meat")
+menuMeat.forEach((item) => item.style.color = red);  => ใช้ forEach เพื่อเปลี่ยน element ที่อยู่ใต้ meat ให้เป็นสีแดง
+
+
+
+// 🚩 6. When the button is clicked, fetch the values ​​from the fname and lname fields, concatenate them, and display them in alert().
+
+function formSubmit() {
+    const form = document.forms["myForm"];          => เข้าถึง form ที่มีชื่อ myForm
+    const first = form.fname.value;         
+    const last = form.lname.value;
+    
+    alert(`Hello ${first} ${last}`)             => แสดงชื่อเต็มใน alert
+
+}
+
+
+
+
+
+
+
+

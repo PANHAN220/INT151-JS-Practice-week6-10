@@ -41,8 +41,7 @@ console.log(greet("Alice", shout)); // ALICE!!!
 console.log(greet("Alice", whispers)); // alice...
 
 
-
-// test my self 
+ 
 
 function toUpper(text) {
     return text.toUpperCase()
@@ -84,13 +83,13 @@ console.log(data1.value);           // 10 ✅ ไม่เปลี่ยนข�
 
 // แบบ impure
 
-function increase(obj) {
+function increases(obj) {
   obj.value += 1; // แก้ค่าใน object เดิม
   return obj.value;
 }
 
 const data2 = { value: 10 };
-console.log(increase(data2)); // 11
+console.log(increases(data2)); // 11
 console.log(data2.value);     // 11 ❌ ข้อมูลเดิมถูกเปลี่ยน
 
 
@@ -138,16 +137,88 @@ console.log(c()); // 3
 
 
 
+//practice 
+
+// 1. ฟังก์ชันสร้างตัวคูณ (Return Function)
+
+function createMultiplier(multiplier) {
+  return function(num) {
+    return num ** multiplier
+  }
+}
+
+const double = createMultiplier(2);
+const triples = createMultiplier(3);
+
+console.log(double(5));
+console.log(triples(5));
+
+//2. แปลงข้อความแบบกำหนดเอง
+
+function transformtext(text,operation) {
+  return operation(text);
+}
+
+function addStar(text) {
+  return  "*" + text + "*"
+}
+
+function reverse(text) {
+   return text.split("").reverse().join("");
+}
+
+console.log(transformtext("SIT", addStar));      
+console.log(transformtext("KMUTT", reverse));
+
+
+// 3. Compose ฟังก์ชันข้อความ
+
+function composeMessage(quote, faculty) {
+  return function(myfullname) {
+    return faculty(quote(myfullname))
+  }
+}
+
+function addSIT(text) {
+  return  text + " TO SIT"
+}
+
+function addYourName(text){
+  return "Welcome " + text
+}
+
+const welcomeText = composeMessage(addYourName, addSIT)
+console.log(welcomeText("sakdichote"));
 
 
 
+// 4.ให้เขียนฟังก์ชัน addStudent(students, newName) ที่
+//    รับ array ของชื่อนักเรียน
+//    คืนค่า array ใหม่ที่มีชื่อนักเรียนเพิ่มเข้ามา โดยไม่แก้ของเดิม
 
 
+function addStudent(students, newName) {
+  return students.concat(newName);
+}
+
+console.log(addStudent(["beam", "yaya", "max"],"mix"));
 
 
+function addStudents(students, newName) {
+  return [...students, newName]
+}
+
+console.log(addStudent(["beam", "yaya", "max"],"mix"));
 
 
-
+// 5. อัปเดตข้อมูลแบบไม่แตะของเดิม 
+function updateProfile(user, newEmail) {
+  return { ...user, email: newEmail };
+}
+const u1 = { name: "Mix", email: "old@mail.com" };
+const u2 = updateProfile(u1, "new@mail.com");
+console.log(u1); 
+console.log(u2); 
 
 
 
