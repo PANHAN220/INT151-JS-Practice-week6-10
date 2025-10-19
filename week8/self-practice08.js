@@ -36,7 +36,7 @@ console.log("Meat", itemMeat.length);
 const soupList = document.getElementById("soup");
 const newItem = document.createElement("li");
 
-newItem.textContent = "Tom yo=um soup"
+newItem.textContent = "Tom yum soup"
 newItem.classList.add = "spicy"
 soupList.appendChild(newItem)
 

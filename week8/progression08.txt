@@ -1,4 +1,4 @@
-//DOMV2 file
+//self-practice08.js file
 
 // 🚩 1. (insertBefore) <li class = "vegan">Cabbage Soup </li>
 //1.1 get its parent

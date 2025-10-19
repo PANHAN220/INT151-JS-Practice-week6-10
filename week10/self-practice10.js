@@ -1,6 +1,6 @@
 
 // =============================================
-// 🚩 Practice 1: localStorage - Todo List
+// 🟢 Practice 1: localStorage - Todo List
 // =============================================
 // 📋 REQUIREMENT:
 // 1. มี input (#colorPicker) ให้เลือกสีจาก color picker
@@ -14,25 +14,25 @@ const colorPicker = document.getElementById('colorPicker')
 const saveColor = document.getElementById('saveColor')
 const clearColor = document.getElementById('clearColor')
 const colorBox = document.getElementById('colorBox')
-                                                                => เก็บ element ต่างๆไว้ในตัวแปร
+
 const savedColor = localStorage.getItem('favColor')
-if (savedColor) {
+if (saveColor) {
     colorBox.style.backgroundColor = savedColor
-}                                                               => โหลดค่าสีเดิมที่บันทึกไว้ใน localStorage
+}
 
 saveColor.addEventListener('click', () => {
-    const color = colorPicker.value                             => อ่านค่าสีที่เลือก
-    localStorage.setItem('favColor', color);                    => บันทึกสีใหม่เมื่อกด save เป็นการเก็บข้อมูลถาวรบน  browser
+    const color = colorPicker.value
+    localStorage.setItem('favColor', color);
     colorBox.style.backgroundColor = color;
 })
 
 clearColor.addEventListener("click", () => {
-  localStorage.removeItem("favColor");                          => ลบข้อมูลออกจาก localStorage เมื่อกด Clear
+  localStorage.removeItem("favColor");
   colorBox.style.backgroundColor = "";
 });
 
 // =============================================
-// 🚩 Practice 2: sessionStorage - Temporary Login
+// 🟢 Practice 2: sessionStorage - Temporary Login
 // =============================================
 // 📋 REQUIREMENT:
 // 1. ให้ผู้ใช้พิมพ์ชื่อในช่อง input (#sessionName)
@@ -47,18 +47,17 @@ const sessionName = document.getElementById("sessionName");
 const startSession = document.getElementById("startSession");
 const endSession = document.getElementById("endSession");
 const greeting = document.getElementById("greeting");
-                                                                            => เก็บ element ต่างๆไว้ในตัวแปร
 
 const sessionUser = sessionStorage.getItem("sessionUser");
 if (sessionUser) greeting.textContent = "Welcome back, " + sessionUser;
 
-startSession.addEventListener("click", () => {                             
-  const name = sessionName.value;                                           => อ่านชื่อที่ผู้ใช้พิมพ์ใน input
-  sessionStorage.setItem("sessionUser", name);                              => เก็บชื่อไว้ใน sessionStorage
-  greeting.textContent = "Welcome, " + name;                                => แสดงข้อความต้อนรับ
+startSession.addEventListener("click", () => {
+  const name = sessionName.value;
+  sessionStorage.setItem("sessionUser", name);
+  greeting.textContent = "Welcome, " + name;
 });
 
 endSession.addEventListener("click", () => {
-  sessionStorage.removeItem("sessionUser");                                 => ลบข้อมูลใน sessionStorage ออก
-  greeting.textContent = "";                                                => ลบข้อความต้อนรับออก
+  sessionStorage.removeItem("sessionUser");
+  greeting.textContent = "";
 });

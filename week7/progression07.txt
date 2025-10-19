@@ -1,5 +1,5 @@
 // DOM Practice Set — “Soup Menu”
-// practice file
+// self-practice.js file
 
 const soupElement = document.getElementById("soup");              => การเข้าถึง element ที่มี id="soup"    
 const allSoup = soupElement.children;                               => เก็บ property ของ element 

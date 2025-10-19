@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Easy Web Storage Practice</title>
+  <style>
+    body { font-family: Arial; padding: 20px; background: #f2f2f2; }
+    section { background: white; padding: 20px; border-radius: 10px; margin-bottom: 20px; }
+    input, button { padding: 8px; margin: 5px; }
+    #colorBox { width: 100px; height: 100px; border: 1px solid #ccc; margin-top: 10px; }
+  </style>
+</head>
+<body>
+
+  <h1>🧠 Beginner Web Storage Practice</h1>
+
+
+  <!-- Practice 1 -->
+  <section>
+    <h2>💾 localStorage - Save Favorite Color</h2>
+    <input type="color" id="colorPicker">
+    <button id="saveColor">Save Color</button>
+    <button id="clearColor">Clear</button>
+    <div id="colorBox"></div>
+  </section>
+
+  <!-- Practice 2 -->
+  <section>
+    <h2>🔐 sessionStorage - Temporary Greeting</h2>
+    <input id="sessionName" placeholder="Enter your name">
+    <button id="startSession">Start Session</button>
+    <button id="endSession">End Session</button>
+    <p id="greeting"></p>
+  </section>
+
+  <script src="self-practice10.js"></script>
+</body>
+</html>
