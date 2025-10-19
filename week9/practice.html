@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JavaScript Event Practice</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      padding: 30px;
+      line-height: 1.6;
+    }
+    section {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 25px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    button {
+      margin: 5px;
+      padding: 8px 14px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background-color: #007bff;
+      color: white;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    #tracker {
+      width: 250px;
+      height: 150px;
+      background: #e0e0e0;
+      margin: 10px auto;
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+    }
+    img {
+      width: 200px;
+      border-radius: 10px;
+    }
+    #box {
+      width: 200px;
+      height: 100px;
+      background: lightgray;
+      margin: 10px auto;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <h1 style="text-align:center;">🎯 Event Practice Playground</h1>
+
+  <section>
+    <button id="toggleBtn">Toggle Text</button>
+    <h3 id="text">Hello World!</h3>
+  </section>
+
+  <section>
+    <div id="box"></div>
+    <button data-color="red">Red</button>
+    <button data-color="green">Green</button>
+    <button data-color="blue">Blue</button>
+  </section>
+
+  <section>
+    <input type="text" id="word" placeholder="Enter a word..." />
+    <button id="repeatBtn">Repeat</button>
+    <div id="output"></div>
+  </section>
+
+  <section>
+    <input type="password" id="password" placeholder="Enter password..." />
+    <p id="strength"></p>
+  </section>
+
+  <section>
+    <div id="keyDisplay" style="font-size:20px; font-weight:bold; text-align:center; padding:20px;">
+      Press any key...
+    </div>
+  </section>
+
+  <script src="practice.js"></script>
+</body>
+</html>

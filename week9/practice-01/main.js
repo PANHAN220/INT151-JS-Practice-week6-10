@@ -11,7 +11,12 @@ form.addEventListener("submit", function (event) {
   message.textContent = "";
   message.className = "";
  
-  if (username.value.trim() === "" || email.value.trim() === "" || password.value.trim() === "" || confirmPassword.value.trim() === "") {
+  if (
+    username.value.trim() === "" ||
+    email.value.trim() === "" ||
+    password.value.trim() === "" ||
+    confirmPassword.value.trim() === ""
+  ) {
     message.textContent = "missing some values, please try again!";
     message.style.color = "red";
     message.classList.add("error");
