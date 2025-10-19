@@ -12,7 +12,7 @@ console.log(htmlElement);
 console.log(document.getElementById("soup"));
 
 
-// gorup property ที่เรียกใช้ได้
+// group property ที่เรียกใช้ได้
 console.log(document.firstChild); // ลูกคนแรกของ root node คือ document 
 console.log(document.firstElementChild); //มองแค่ element type เท่านั้น
 console.log(document.lastChild);
